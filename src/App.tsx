@@ -1,7 +1,7 @@
 import { useAppSelector } from "./hooks";
 import "./App.css";
 import AddTask from "./components/AddTask";
-import TaskCard from "./components/TaskCard";
+import ListTask from "./components/ListTask";
 import { useState } from "react";
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
           </div>
 
           {tasks.length > 0 ? (
-            <TaskCard tasks={filteredTasks} />
+            <ListTask tasks={filteredTasks} />
           ) : (
             <p className="empty-state">No tasks yet! Add one above.</p>
           )}

@@ -14,13 +14,12 @@ function taskReducer(
 
     case "toggle":
       return {
-        state,
-        tasks: state.tasks.map((task) => {
-          if (task.id === action.payload.id) {
-            return { ...task, isDone: !task.isDone };
-          }
-          return task;
-        }),
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload.id
+            ? { ...task, isDone: !task.isDone }
+            : task,
+        ),
       };
 
     case "edit":
